@@ -1,0 +1,49 @@
+.gameName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .gameName{
+        height: auto;
+        align-items: flex-start;
+        
+    }
+}
+
+@media (max-width: 1000px) {
+    .gameName{
+        height: auto;
+        align-items: flex-start;
+        
+    }
+}
+
+@media (max-width: 800px) {
+    .gameName{
+        height: auto;
+        align-items: flex-start;
+        
+    }
+}
+
+@media (max-width: 520px) {
+    .gameName{
+        height: auto;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 320px) {
+    .gameName{
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1;
+        height: auto;
+    }
+   
+}

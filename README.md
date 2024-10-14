@@ -1,8 +1,36 @@
-# React + Vite
+First grade learning game
+website design project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌟 About
+The purpose of this project is to learn HTML, CSS, JS and REACT.
 
-Currently, two official plugins are available:
+Site published at: 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🎯 Project features/goals
+REACT
+Responsive design
+Working game
+LocalStorage
+🧰 Getting Started
+💻 Prerequisites
+Node.js - download and install
+
+https://nodejs.org
+Git - download and install
+
+https://git-scm.com
+🏃 Run locally
+Would like to run this project locally? Open terminal and follow these steps:
+
+Clone the repo to your selected folder
+git clone 
+
+Install NPM packages
+npm i
+or
+npm install
+Run the server
+npm run dev
+Open the link from the terminal
+🎅 Author:
+[Giedre](https://github.com/GiedreKite): Github
