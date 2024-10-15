@@ -1,6 +1,8 @@
 import style from './Game.module.css';
 import { words } from '../data/words.js';
 import { useEffect, useState } from "react";
+import { Footer } from '../footer/Footer.jsx';
+import { Header } from '../header/Header.jsx';
 
 
 export function Game(params) {
@@ -185,6 +187,7 @@ export function Game(params) {
 
     return (
         <>
+            <Header />
             <div className={ style.gameContainer }>
                 <h2 className={ style.gameCount }>- Win:{ winGame } - </h2>
                 <h2 className={ style.gameCount }> - Lose:{ loseGame } -</h2>
@@ -240,7 +243,7 @@ export function Game(params) {
 
             </section>
 
-
+            <Footer />
         </>
     );
 }

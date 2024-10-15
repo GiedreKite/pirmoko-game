@@ -1,6 +1,8 @@
 import style from './Game.module.css';
 import { plus } from '../data/plus.js';
 import { useEffect, useState } from "react";
+import { Header } from '../header/Header.jsx';
+import { Footer } from '../footer/Footer.jsx';
 
 
 export function Plus(params) {
@@ -177,6 +179,7 @@ export function Plus(params) {
 
     return (
         <>
+            <Header />
             <div className={ style.gameContainer }>
                 <h2 className={ style.gameCount }>- Atspėta:{ winPlus } - </h2>
                 <h2 className={ style.gameCount }> - Nepavyko:{ losePlus } -</h2>
@@ -211,7 +214,7 @@ export function Plus(params) {
 
             </section>
 
-
+            <Footer />
         </>
     );
 }

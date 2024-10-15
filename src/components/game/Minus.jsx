@@ -1,6 +1,8 @@
 import style from './Game.module.css';
 import { minus } from '../data/minus.js';
 import { useEffect, useState } from "react";
+import { Footer } from '../footer/Footer.jsx';
+import { Header } from '../header/Header.jsx';
 
 
 export function Minus(params) {
@@ -177,6 +179,7 @@ export function Minus(params) {
 
     return (
         <>
+            <Header />
             <div className={ style.gameContainer }>
                 <h2 className={ style.gameCount }>- Atspėta:{ winMinus } - </h2>
                 <h2 className={ style.gameCount }> - Nepavyko:{ loseMinus } -</h2>
@@ -209,7 +212,7 @@ export function Minus(params) {
 
 
             </section>
-
+            <Footer />
 
         </>
     );
