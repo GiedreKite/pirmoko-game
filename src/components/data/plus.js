@@ -1,4 +1,4 @@
-export const words = [
+export const plus = [
     {  
         state: 0,
         word: '1+1=2',
@@ -306,5 +306,101 @@ export const words = [
         {  
         state: 77,
         word: '7+10=17',
+    },
+    {
+        state: 78,
+        word: '8+0=8',
+    },
+     {  
+        state: 79,
+        word: '8+1=9',
+    },
+     {  
+        state: 80,
+        word: '8+2=10',
+    },
+     {  
+        state: 81,
+        word: '8+3=11',
+    },
+     {  
+        state: 82,
+        word: '8+4=12',
+    },
+     {  
+        state: 83,
+        word: '8+5=13',
+    },
+          {  
+        state: 84,
+        word: '8+6=14',
+    },
+         {  
+        state: 85,
+        word: '8+7=15',
+    },
+         {  
+        state: 86,
+        word: '8+8=16',
+    },
+    {  
+        state: 87,
+        word: '8+9=17',
+    },
+        {  
+        state: 88,
+        word: '8+10=18',
+    },
+         {
+        state: 89,
+        word: '9+0=9',
+    },
+     {  
+        state: 90,
+        word: '9+1=10',
+    },
+     {  
+        state: 91,
+        word: '9+2=11',
+    },
+     {  
+        state: 92,
+        word: '9+3=12',
+    },
+     {  
+        state: 93,
+        word: '9+4=13',
+    },
+     {  
+        state: 94,
+        word: '9+5=14',
+    },
+          {  
+        state: 95,
+        word: '9+6=15',
+    },
+         {  
+        state: 96,
+        word: '9+7=16',
+    },
+         {  
+        state: 97,
+        word: '9+8=17',
+    },
+    {  
+        state: 98,
+        word: '9+9=18',
+    },
+        {  
+        state: 99,
+        word: '9+10=19',
+    },
+    {  
+        state: 100,
+        word: '10+10=20',
+    },
+       {  
+        state: 101,
+        word: '0+0=0',
     },
 ];

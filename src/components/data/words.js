@@ -1,46 +1,46 @@
 export const words = [
     {  
         state: 0,
-        word: 'STAB',
+        word: 'Labas',
     },
     {  
         state: 1,
-        word: 'KILLER',
+        word: 'vakaras',
     },
     {  
         state: 2,
-        word: 'HORROR',
+        word: 'Giedrė',
     },
     {  
         state: 3,
-        word: 'SAW',
+        word: 'draugė',
     },
     {  
         state: 4,
-        word: 'FILM',
+        word: 'draugas',
     },
     {  
         state: 5,
-        word: 'GUN',
+        word: 'mokytis',
     },
     {  
         state: 6,
-        word: 'KILL',
+        word: 'skaičiuoti',
     },
     {  
         state: 7,
-        word: 'SHOCK',
+        word: 'sudėti',
     },
     {  
         state: 8,
-        word: 'NOISE',
+        word: 'atimti',
     },
     {  
         state: 9,
-        word: 'SHOUT',
+        word: 'lygu',
     },
     {  
         state: 10,
-        word: 'SCREAM',
+        word: 'geras',
     },
 ];

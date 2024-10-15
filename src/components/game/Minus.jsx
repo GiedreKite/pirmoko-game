@@ -1,9 +1,9 @@
 import style from './Game.module.css';
-import { plus } from '../data/plus.js';
+import { minus } from '../data/minus.js';
 import { useEffect, useState } from "react";
 
 
-export function Plus(params) {
+export function Minus(params) {
     const [start, setStart] = useState(true);
     const [randomNumber, setRandomNumber] = useState(1);
     const [hidden, setHiddenWord] = useState('');
@@ -13,23 +13,23 @@ export function Plus(params) {
     const [end, setEnd] = useState(false);
     const [pushedkey, setpushedkey] = useState([]);
 
-    const storageWinPlusKey = 'winPlus';
-    const storageLosePlusKey = 'losePlus';
-    const [winPlus, setWinPlus] = useState(readLocalWin());
-    const [losePlus, setLosePlus] = useState(readLocalLose())
+    const storageWinMinusKey = 'winMinus';
+    const storageLoseMinusKey = 'loseMinus';
+    const [winMinus, setWinMinus] = useState(readLocalWin());
+    const [loseMinus, setLoseMinus] = useState(readLocalLose())
 
 
     readLocalData();
     useEffect(() => {
-        localStorage.setItem(storageWinPlusKey, JSON.stringify(winPlus));
-    }, [winPlus]);
+        localStorage.setItem(storageWinMinusKey, JSON.stringify(winMinus));
+    }, [winMinus]);
 
     useEffect(() => {
-        localStorage.setItem(storageLosePlusKey, JSON.stringify(losePlus));
-    }, [losePlus]);
+        localStorage.setItem(storageLoseMinusKey, JSON.stringify(loseMinus));
+    }, [loseMinus]);
 
     function readLocalWin() {
-        const localData = localStorage.getItem(storageWinPlusKey);
+        const localData = localStorage.getItem(storageWinMinusKey);
         if (localData) {
             return JSON.parse(localData);
         }
@@ -37,24 +37,24 @@ export function Plus(params) {
     }
 
     function readLocalLose() {
-        const localData = localStorage.getItem(storageLosePlusKey);
+        const localData = localStorage.getItem(storageLoseMinusKey);
         if (localData) {
             return JSON.parse(localData);
         }
         return 0;
     }
     function readLocalData() {
-        const plus = localStorage.getItem('plus');
-        if (plus) {
-            return JSON.parse(plus);
+        const minus = localStorage.getItem('minus');
+        if (minus) {
+            return JSON.parse(minus);
         }
-        return plus;
+        return minus;
     }
 
     useEffect(() => {
         window.addEventListener('keyup', (e) => {
             const pushedkey = (e.key)[0].toUpperCase();
-            const abc = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '=',]
+            const abc = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '=',]
             console.log(!guessed.includes(pushedkey))
 
             console.log(abc.includes(pushedkey))
@@ -84,13 +84,13 @@ export function Plus(params) {
         if (start === true) {
             const temp_num = Math.floor(Math.random() * (101 - 1 + 1)) + 1;
             setRandomNumber(temp_num);
-            setRevealed(plus[temp_num].word);
+            setRevealed(minus[temp_num].word);
             setGuessed([]);
             setpushedkey([]);
 
             // Automatically reveal `+` and `=`
-            const hiddenWord = Array.from(plus[temp_num].word).map(char => {
-                return char === '+' || char === '=' ? char : '_ ';
+            const hiddenWord = Array.from(minus[temp_num].word).map(char => {
+                return char === '-' || char === '=' ? char : '_ ';
             }).join("");
 
             setHiddenWord(hiddenWord);
@@ -108,7 +108,7 @@ export function Plus(params) {
             const currentChar = revealed.charAt(i);
 
             // Automatically reveal `+` and `=` without guessing
-            if (currentChar === '+' || currentChar === '=') {
+            if (currentChar === '-' || currentChar === '=') {
                 tempHidden += currentChar;
             } else if (guessed.includes(currentChar)) {
                 tempHidden += currentChar;
@@ -123,7 +123,7 @@ export function Plus(params) {
             passed = false;
             setEnd(true);
             alert('You Win the game!');
-            setWinPlus(winPlus + 1);
+            setWinMinus(winMinus + 1);
         }
 
         setHiddenWord(tempHidden);
@@ -146,7 +146,7 @@ export function Plus(params) {
             if (life > 1)
                 setLife(life - 1);
             else {
-                setLosePlus(losePlus + 1)
+                setLoseMinus(loseMinus + 1)
                 setEnd(true)
                 setLife(life - 1);
                 alert('You LOST the Game')
@@ -178,8 +178,8 @@ export function Plus(params) {
     return (
         <>
             <div className={ style.gameContainer }>
-                <h2 className={ style.gameCount }>- Atspėta:{ winPlus } - </h2>
-                <h2 className={ style.gameCount }> - Nepavyko:{ losePlus } -</h2>
+                <h2 className={ style.gameCount }>- Atspėta:{ winMinus } - </h2>
+                <h2 className={ style.gameCount }> - Nepavyko:{ loseMinus } -</h2>
             </div>
 
 
@@ -206,8 +206,7 @@ export function Plus(params) {
                 <button onClick={ () => guessLetter('7') } disabled={ guessed.includes('7') || end } style={ guessed.includes('7') ? (revealed.includes('7') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>7</button>
                 <button onClick={ () => guessLetter('8') } disabled={ guessed.includes('8') || end } style={ guessed.includes('8') ? (revealed.includes('8') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>8</button>
                 <button onClick={ () => guessLetter('9') } disabled={ guessed.includes('9') || end } style={ guessed.includes('9') ? (revealed.includes('9') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>9</button>
-                <button onClick={ () => guessLetter('+') } disabled={ guessed.includes('+') || end } style={ guessed.includes('+') ? (revealed.includes('+') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>+</button>
-                <button onClick={ () => guessLetter('=') } disabled={ guessed.includes('=') || end } style={ guessed.includes('=') ? (revealed.includes('=') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>=</button>
+
 
             </section>
 

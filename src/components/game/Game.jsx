@@ -54,7 +54,7 @@ export function Game(params) {
     useEffect(() => {
         window.addEventListener('keyup', (e) => {
             const pushedkey = (e.key)[0].toUpperCase();
-            const abc = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M']
+            const abc = ['E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'C', 'V', 'B', 'N', 'M', 'Ą', 'Č', 'Ę', 'Ė', 'Į', 'Š', 'Ų', 'Ū', 'Ž',]
             console.log(!guessed.includes(pushedkey))
 
             console.log(abc.includes(pushedkey))
@@ -192,19 +192,6 @@ export function Game(params) {
 
 
             <div className="play">
-                { !isMobile && (<img className="lifeimg" src={ playyy } alt="#" />) }
-                { !isMobile && (<img className="lifeimg" style={ life < 6 ? (6 ? { display: "none" } : { display: "inline-block" }) : {} } src={ puzlele } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life < 5 ? (5 ? { display: "none" } : { display: "inline-block" }) : {} } src={ puzzleele } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life < 4 ? (4 ? { display: "none" } : { display: "inline-block" }) : {} } src={ puzlele } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life < 3 ? (3 ? { display: "none" } : { display: "inline-block" }) : {} } src={ puzzleele } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life < 2 ? (2 ? { display: "none" } : { display: "inline-block" }) : {} } src={ puzlele } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life < 1 ? (1 ? { display: "none" } : { display: "inline-block" }) : {} } src={ puzzleele } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life != 5 ? (life != 5 ? { display: "none" } : { display: "inline-block" }) : {} } src={ one } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life != 4 ? (life != 4 ? { display: "none" } : { display: "inline-block" }) : {} } src={ two } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life != 3 ? (life != 3 ? { display: "none" } : { display: "inline-block" }) : {} } src={ tree } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life != 2 ? (life != 2 ? { display: "none" } : { display: "inline-block" }) : {} } src={ four } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life != 1 ? (life != 1 ? { display: "none" } : { display: "inline-block" }) : {} } src={ five } alt="" />) }
-                { !isMobile && (<img className="lifeimg" style={ life != 0 ? (life != 0 ? { display: "none" } : { display: "inline-block" }) : {} } src={ six } alt="" />) }
 
                 <p>Life:{ life }</p>
 
@@ -217,8 +204,7 @@ export function Game(params) {
             <h2>{ hidden }</h2>
 
             <section className={ style.keybord }>
-                <button onClick={ () => guessLetter('Q') } disabled={ guessed.includes('Q') || end } style={ guessed.includes('Q') ? (revealed.includes('Q') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Q</button>
-                <button onClick={ () => guessLetter('W') } disabled={ guessed.includes('W') || end } style={ guessed.includes('W') ? (revealed.includes('W') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>W</button>
+
                 <button onClick={ () => guessLetter('E') } disabled={ guessed.includes('E') || end } style={ guessed.includes('E') ? (revealed.includes('E') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>E</button>
                 <button onClick={ () => guessLetter('R') } disabled={ guessed.includes('R') || end } style={ guessed.includes('R') ? (revealed.includes('R') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>R</button>
                 <button onClick={ () => guessLetter('T') } disabled={ guessed.includes('T') || end } style={ guessed.includes('T') ? (revealed.includes('T') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>T</button>
@@ -237,12 +223,20 @@ export function Game(params) {
                 <button onClick={ () => guessLetter('K') } disabled={ guessed.includes('K') || end } style={ guessed.includes('K') ? (revealed.includes('K') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>K</button>
                 <button onClick={ () => guessLetter('L') } disabled={ guessed.includes('L') || end } style={ guessed.includes('L') ? (revealed.includes('L') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>L</button>
                 <button onClick={ () => guessLetter('Z') } disabled={ guessed.includes('Z') || end } style={ guessed.includes('Z') ? (revealed.includes('Z') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Z</button>
-                <button onClick={ () => guessLetter('X') } disabled={ guessed.includes('X') || end } style={ guessed.includes('X') ? (revealed.includes('X') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>X</button>
                 <button onClick={ () => guessLetter('C') } disabled={ guessed.includes('C') || end } style={ guessed.includes('C') ? (revealed.includes('C') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>C</button>
                 <button onClick={ () => guessLetter('V') } disabled={ guessed.includes('V') || end } style={ guessed.includes('V') ? (revealed.includes('V') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>V</button>
                 <button onClick={ () => guessLetter('B') } disabled={ guessed.includes('B') || end } style={ guessed.includes('B') ? (revealed.includes('B') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>B</button>
                 <button onClick={ () => guessLetter('N') } disabled={ guessed.includes('N') || end } style={ guessed.includes('N') ? (revealed.includes('N') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>N</button>
                 <button onClick={ () => guessLetter('M') } disabled={ guessed.includes('M') || end } style={ guessed.includes('M') ? (revealed.includes('M') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>M</button>
+                <button onClick={ () => guessLetter('Ą') } disabled={ guessed.includes('Ą') || end } style={ guessed.includes('Ą') ? (revealed.includes('Ą') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Ą</button>
+                <button onClick={ () => guessLetter('Č') } disabled={ guessed.includes('Č') || end } style={ guessed.includes('Č') ? (revealed.includes('Č') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Č</button>
+                <button onClick={ () => guessLetter('Ę') } disabled={ guessed.includes('Ę') || end } style={ guessed.includes('Ę') ? (revealed.includes('Ę') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Ę</button>
+                <button onClick={ () => guessLetter('Į') } disabled={ guessed.includes('Į') || end } style={ guessed.includes('Į') ? (revealed.includes('Į') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Į</button>
+                <button onClick={ () => guessLetter('Ė') } disabled={ guessed.includes('Ė') || end } style={ guessed.includes('Ė') ? (revealed.includes('Ė') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Ė</button>
+                <button onClick={ () => guessLetter('Š') } disabled={ guessed.includes('Š') || end } style={ guessed.includes('Š') ? (revealed.includes('Š') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Š</button>
+                <button onClick={ () => guessLetter('Ų') } disabled={ guessed.includes('Ų') || end } style={ guessed.includes('Ų') ? (revealed.includes('Ų') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Ų</button>
+                <button onClick={ () => guessLetter('Ū') } disabled={ guessed.includes('Ū') || end } style={ guessed.includes('Ū') ? (revealed.includes('Ū') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Ū</button>
+                <button onClick={ () => guessLetter('Ž') } disabled={ guessed.includes('Ž') || end } style={ guessed.includes('Ž') ? (revealed.includes('Ž') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>Ž</button>
 
             </section>
 
