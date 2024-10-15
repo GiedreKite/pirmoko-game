@@ -2,12 +2,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { useState } from 'react'
 import './App.css'
-import { Header } from './components/header/Header'
-import { Footer } from './components/footer/Footer'
+
 import { Game } from './components/game/Game'
 import { Plus } from './components/game/Plus'
 import { Minus } from './components/game/Minus'
 import { ThemeProvider } from './components/themeContext/ThemeContext';
+import Main from './components/main/Main';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +18,7 @@ function App() {
 
         <BrowserRouter>
           <Routes>
+            <Route path='/' element={ <Main /> }></Route>
 
             <Route path='/minus' element={ <Minus /> }></Route>
             <Route path='/plus' element={ <Plus /> }></Route>

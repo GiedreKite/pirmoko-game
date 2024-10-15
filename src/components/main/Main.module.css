@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+
+body {
+  font-family: "Signika Negative", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+
+
+.welcome {
+  font-family: "Signika Negative", sans-serif;
+  color: yellow;
+  padding: 2rem;
+}
+
+.description {
+  font-family: "Signika Negative", sans-serif;
+  color: #4CAF50;
+  padding: 2rem;
+}
+
+
+.photo {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.img {
+  height: 400px;
+  width: 400px;
+  border-radius: 10%;
+  padding: 1rem;
+}
+
+
+@keyframes card-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .photo {
+    animation: card-spin infinite 30s linear;
+  }
+}
+
+/* Styling for the container holding the image */
+.photoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Bouncing photo styling */
+.bouncingPhoto {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  animation: bounce 20s infinite;
+  /* Apply the bounce animation */
+}
+
+/* Keyframes for the bounce animation */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  15% {
+    transform: translateY(50px);
+  }
+
+  25% {
+    transform: translateY(-50px);
+  }
+
+  35% {
+    transform: translateY(0);
+  }
+
+  45% {
+    transform: translateY(40px);
+  }
+
+  55% {
+    transform: translateY(-40px);
+  }
+
+  65% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(30px);
+  }
+
+  85% {
+    transform: translateY(-30px);
+  }
+
+  95% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .bouncingPhoto {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .welcome {
+    font-size: 0.5rem;
+    /* Adjust font size for small screens */
+    padding-right: 2rem;
+    margin-right: 2rem;
+  }
+
+  .description {
+    font-size: 0.5rem;
+    padding: 1rem;
+  }
+
+}
