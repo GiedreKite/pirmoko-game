@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 
 import { Game } from './components/game/Game'

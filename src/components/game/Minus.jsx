@@ -1,6 +1,6 @@
 import style from './Game.module.css';
 import { minus } from '../data/minus.js';
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from '../footer/Footer.jsx';
 
 import Header from '../header/Header.jsx';

@@ -21,7 +21,7 @@ body {
 /* Light mode */
 .page.light {
   background: linear-gradient(-45deg, #ffffff, rgb(251, 251, 191), #ffffff, rgb(189, 248, 189), #ffffff, rgb(251, 251, 191), #ffffff, rgb(189, 248, 189));
-  background-size: 1000% 1000%;
+  background-size: 150% 150%;
   animation: gradientAnimation 15s ease infinite;
   color: #000;
 }
@@ -30,27 +30,27 @@ body {
 /* Dark mode */
 .page.dark {
   background: linear-gradient(-45deg, #000000, #0e220f, #000000, rgb(34, 34, 10), #000000, #0e220f, #000000, rgb(34, 34, 10), #000000);
-  background-size: 1000% 1000%;
+  background-size: 150% 150%;
   animation: gradientAnimation 15s ease infinite;
   color: #fff;
 }
 
 .page.girl {
   background-image: url(../public/girl.webp);
-  background-size: 1000% 1000%;
+  background-size: 150% 150%;
   animation: gradientAnimation 15s ease infinite;
   color: #fff;
 }
 
 .page.boy {
   background-image: url(../public/boy.jpg);
-  background-size: 1000% 1000%;
+  background-size: 150% 150%;
   animation: gradientAnimation 15s ease infinite;
   color: #fff;
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
   body {
     padding: 0.75rem;
   }
