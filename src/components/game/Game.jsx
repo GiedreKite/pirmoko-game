@@ -61,15 +61,10 @@ export function Game(params) {
         window.addEventListener('keyup', (e) => {
             const pushedkey = (e.key)[0].toUpperCase();
             const abc = ['E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'C', 'V', 'B', 'N', 'M', 'Ą', 'Č', 'Ę', 'Ė', 'Į', 'Š', 'Ų', 'Ū', 'Ž',]
-            console.log(!guessed.includes(pushedkey))
 
-            console.log(abc.includes(pushedkey))
-            console.log(!end)
-            // end=false;
+
 
             if (!guessed.includes(pushedkey) && abc.includes(pushedkey) && !end) {
-                //  guessed.push(pushedkey)
-                //  setGuessed(guessed)
                 guessLetter(pushedkey)
             }
 
@@ -88,17 +83,13 @@ export function Game(params) {
 
     function startGame() {
         if (start === true) {
+            setStart(false);
             const temp_num = Math.floor(Math.random() * (10 - 1 + 1)) + 1
             setRandomNumber(temp_num);
             setRevealed(words[temp_num].word)
             setGuessed([])
             setpushedkey([])
             setHiddenWord(Array.from(words[temp_num].word.split(""), () => "_ ").join(""))
-            // hideWord(guessed);
-            console.log(randomNumber)
-            console.log(revealed)
-            console.log(words[temp_num].word)
-            setStart(false);
             setLife(6);
             setEnd(false);
         }
@@ -111,9 +102,6 @@ export function Game(params) {
         let passed = true;
 
         for (let i = 0; i < revealed.length; i++) {
-            //patikrinti ar raide yra tarp spetu
-            // console.log(revealed.charAt(i))
-            // console.log(guessed.includes(revealed.charAt(i)))
             if (guessed.includes(revealed.charAt(i))) {
                 tempHidden += revealed.charAt(i);
             }
@@ -130,12 +118,6 @@ export function Game(params) {
             setEnd(true);
             alert('You Win the game!');
             setWinGame(winGame + 1);
-
-
-
-            //laimejo ir kuria mygtuka pradeti is naujo
-            // }
-            //jei nera _
         }
         console.log(guessed)
 
@@ -153,8 +135,7 @@ export function Game(params) {
         setGuessed(guessed)
         hideWord(guessed);
 
-        console.log(letter);
-        console.log(guessed);
+
 
         if (!revealed.includes(letter)) {
             if (life > 1)
@@ -166,7 +147,7 @@ export function Game(params) {
                 alert('You LOST the Game')
             }
         }
-        console.log(life)
+
         if (setEnd === true) {
             life - 1
         }
