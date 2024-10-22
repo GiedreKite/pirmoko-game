@@ -2,39 +2,36 @@ import React, { useContext, useState } from "react";
 import "./drob.css"; // optional: add styles in a separate CSS file
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ThemeContext } from "../themeContext/ThemeContext";
+import { Link } from "react-router-dom";
 
-const Dropdown = () => {
+const DropdownFirstClass = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { theme, toggleTheme } = useContext(ThemeContext);
 
     // Function to toggle the dropdown
     const toggleDropdown = () => {
-        setIsOpen(!isOpen); // Toggle the dropdown state
+        setIsOpen(!isOpen);
     };
 
     return (
         <div className="dropdown">
-            {/* Dropdown Button */ }
             <button onClick={ toggleDropdown } className="dropdown-button">
-                Fono pasirinkimas
+                Pirmoko žaidimai
                 <span className='icon'>
                     { isOpen ? <FaChevronUp /> : <FaChevronDown /> }
                 </span>
             </button>
 
-            {/* Dropdown Menu */ }
             { isOpen && (
                 <div className="dropdown-menu">
 
-                    <button className='item' onClick={ () => toggleTheme("dark") } > Tamsus  </button>
-                    <button className='item' onClick={ () => toggleTheme("light") }  > Šviesus </button>
-                    <button className='item' onClick={ () => toggleTheme("girl") }  > Liepos </button>
-                    <button className='item' onClick={ () => toggleTheme("boy") }  > Emilio </button>
-
+                    <Link to="/minus" className='link'>Atimkime drauge</Link>
+                    <Link to="/plus" className='link'>Sudėkime drauge</Link>
+                    <Link to="/game" className='link'>Pailsėkime</Link>
                 </div>
             ) }
         </div>
     );
 };
 
-export default Dropdown;
+export default DropdownFirstClass;

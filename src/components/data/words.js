@@ -1,46 +1,46 @@
 export const words = [
     {  
         state: 0,
-        word: 'Labas',
+        word: 'LABAS',
     },
     {  
         state: 1,
-        word: 'vakaras',
+        word: 'VAKARAS',
     },
     {  
         state: 2,
-        word: 'Giedrė',
+        word: 'GIEDRĖ',
     },
     {  
         state: 3,
-        word: 'draugė',
+        word: 'DRAUGĖ',
     },
     {  
         state: 4,
-        word: 'draugas',
+        word: 'DRAUGAS',
     },
     {  
         state: 5,
-        word: 'mokytis',
+        word: 'MOKYTIS',
     },
     {  
         state: 6,
-        word: 'skaičiuoti',
+        word: 'SKAIČIUOTI',
     },
     {  
         state: 7,
-        word: 'sudėti',
+        word: 'SUDĖTI',
     },
     {  
         state: 8,
-        word: 'atimti',
+        word: 'ATIMTI',
     },
     {  
         state: 9,
-        word: 'lygu',
+        word: 'LYGU',
     },
     {  
         state: 10,
-        word: 'geras',
+        word: 'GERAS',
     },
 ];

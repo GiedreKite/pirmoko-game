@@ -69,3 +69,25 @@
 .dropdown-menu li:hover {
     background-color: #f1f1f1;
 }
+
+.link {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none !important;
+    gap: 2rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+
+}
+
+.link:focus,
+.link:hover {
+    color: #4CAF50 !important;
+    border: none;
+    box-shadow: 0 8px 10px -2px #4caf4fae;
+}

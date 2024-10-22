@@ -1,9 +1,10 @@
 import style from './Game.module.css';
 import { minus } from '../data/minus.js';
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Footer from '../footer/Footer.jsx';
 
 import Header from '../header/Header.jsx';
+import { ThemeContext } from '../themeContext/ThemeContext.jsx';
 
 
 export function Minus(params) {
@@ -20,6 +21,8 @@ export function Minus(params) {
     const storageLoseMinusKey = 'loseMinus';
     const [winMinus, setWinMinus] = useState(readLocalWin());
     const [loseMinus, setLoseMinus] = useState(readLocalLose())
+
+    const { theme } = useContext(ThemeContext);
 
 
     readLocalData();
@@ -181,38 +184,42 @@ export function Minus(params) {
     return (
         <>
             <Header />
-            <div className={ style.gameContainer }>
-                <h2 className={ style.gameCount }>- Atspėta:{ winMinus } - </h2>
-                <h2 className={ style.gameCount }> - Nepavyko:{ loseMinus } -</h2>
-            </div>
+            <main >
+
+                <div className={ style.gameContainer }>
+                    <h2 className={ style.gameCount }>- Atspėta:{ winMinus } - </h2>
+                    <h2 className={ style.gameCount }> - Nepavyko:{ loseMinus } -</h2>
+                </div>
 
 
-            <div className="play">
+                <div className="play">
 
-                <p>Life:{ life }</p>
+                    <p>Life:{ life }</p>
 
-            </div>
-            { end &&
-                <div> <h2> Buvo paslėpta: { revealed }</h2>
-                    <button className="endbutton" onClick={ () => setStart(true) }>Žaisti iš naujo</button></div>
-            }
+                </div>
+                { end &&
+                    <div> <h2> Buvo paslėpta: { revealed }</h2>
+                        <button className="endbutton" onClick={ () => setStart(true) }>Žaisti iš naujo</button></div>
+                }
 
-            <h2>{ hidden }</h2>
+                <h2>{ hidden }</h2>
 
-            <section className={ style.keybord }>
-                <button onClick={ () => guessLetter('0') } disabled={ guessed.includes('0') || end } style={ guessed.includes('0') ? (revealed.includes('0') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>0</button>
-                <button onClick={ () => guessLetter('1') } disabled={ guessed.includes('1') || end } style={ guessed.includes('1') ? (revealed.includes('1') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>1</button>
-                <button onClick={ () => guessLetter('2') } disabled={ guessed.includes('2') || end } style={ guessed.includes('2') ? (revealed.includes('2') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>2</button>
-                <button onClick={ () => guessLetter('3') } disabled={ guessed.includes('3') || end } style={ guessed.includes('3') ? (revealed.includes('3') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>3</button>
-                <button onClick={ () => guessLetter('4') } disabled={ guessed.includes('4') || end } style={ guessed.includes('4') ? (revealed.includes('4') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>4</button>
-                <button onClick={ () => guessLetter('5') } disabled={ guessed.includes('5') || end } style={ guessed.includes('5') ? (revealed.includes('5') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>5</button>
-                <button onClick={ () => guessLetter('6') } disabled={ guessed.includes('6') || end } style={ guessed.includes('6') ? (revealed.includes('6') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>6</button>
-                <button onClick={ () => guessLetter('7') } disabled={ guessed.includes('7') || end } style={ guessed.includes('7') ? (revealed.includes('7') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>7</button>
-                <button onClick={ () => guessLetter('8') } disabled={ guessed.includes('8') || end } style={ guessed.includes('8') ? (revealed.includes('8') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>8</button>
-                <button onClick={ () => guessLetter('9') } disabled={ guessed.includes('9') || end } style={ guessed.includes('9') ? (revealed.includes('9') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>9</button>
+                <section className={ style.keybord }>
+                    <button onClick={ () => guessLetter('0') } disabled={ guessed.includes('0') || end } style={ guessed.includes('0') ? (revealed.includes('0') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>0</button>
+                    <button onClick={ () => guessLetter('1') } disabled={ guessed.includes('1') || end } style={ guessed.includes('1') ? (revealed.includes('1') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>1</button>
+                    <button onClick={ () => guessLetter('2') } disabled={ guessed.includes('2') || end } style={ guessed.includes('2') ? (revealed.includes('2') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>2</button>
+                    <button onClick={ () => guessLetter('3') } disabled={ guessed.includes('3') || end } style={ guessed.includes('3') ? (revealed.includes('3') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>3</button>
+                    <button onClick={ () => guessLetter('4') } disabled={ guessed.includes('4') || end } style={ guessed.includes('4') ? (revealed.includes('4') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>4</button>
+                    <button onClick={ () => guessLetter('5') } disabled={ guessed.includes('5') || end } style={ guessed.includes('5') ? (revealed.includes('5') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>5</button>
+                    <button onClick={ () => guessLetter('6') } disabled={ guessed.includes('6') || end } style={ guessed.includes('6') ? (revealed.includes('6') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>6</button>
+                    <button onClick={ () => guessLetter('7') } disabled={ guessed.includes('7') || end } style={ guessed.includes('7') ? (revealed.includes('7') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>7</button>
+                    <button onClick={ () => guessLetter('8') } disabled={ guessed.includes('8') || end } style={ guessed.includes('8') ? (revealed.includes('8') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>8</button>
+                    <button onClick={ () => guessLetter('9') } disabled={ guessed.includes('9') || end } style={ guessed.includes('9') ? (revealed.includes('9') ? { backgroundColor: "green" } : { backgroundColor: "red" }) : {} } className={ style.key }>9</button>
 
 
-            </section>
+                </section>
+
+            </main>
             <Footer />
 
         </>

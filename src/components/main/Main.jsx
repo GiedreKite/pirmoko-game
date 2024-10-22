@@ -21,7 +21,7 @@ export default function Main() {
 
 
     const [visible, setVisible] = useState(false);
-    const { theme } = useContext(ThemeContext); // Get the current theme
+    const { theme } = useContext(ThemeContext);
     const [isMobile, setIsMobile] = useState(false);
 
     // Custom Hook to detect screen width
